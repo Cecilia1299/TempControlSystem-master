@@ -1,0 +1,15 @@
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.icon-button:hover {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.icon-button:pressed {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

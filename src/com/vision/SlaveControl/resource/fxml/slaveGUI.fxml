@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.vision.SlaveControl.resource.Controller.slaveController" stylesheets="@../css/slaveStyle.css" spacing="10" alignment="CENTER" prefWidth="500" prefHeight="400">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+    <TitledPane text="IP" expanded="true" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets left="20" right="20" />
+        </VBox.margin>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <HBox spacing="5" alignment="CENTER">
+                <Label text="127.0.0.1:" />
+                <TextField fx:id="portField" promptText="端口号" onAction="#getPortNumber"/>
+            </HBox>
+        </VBox>
+    </TitledPane>
+    <TitledPane text="状态显示" expanded="true" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets left="20" right="20" />
+        </VBox.margin>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <GridPane hgap="10" vgap="10" alignment="CENTER">
+                <Label text="室温:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="roomTempField" text="34.3" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="目标:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="targetTempField" text="27" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#getTargetTemperature"/>
+                <Button fx:id="confirmButton_slave" text="确定" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2" onAction="#confirmAction">
+                </Button>
+
+                <Label text="模式:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField text="制冷" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="风速:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField text="小" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </GridPane>
+        </VBox>
+    </TitledPane>
+    <HBox spacing="20" alignment="CENTER" VBox.vgrow="NEVER">
+        <Button text="开始" fx:id="startButton" onAction="#startAction" />
+        <Button text="关闭" fx:id="stopButton" onAction="#stopAction"/>
+    </HBox>
+</VBox>
